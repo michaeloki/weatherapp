@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * (C) COPYRIGHT 2017, MICHAEL OKI https://michaeloki.blogspot.com
+  -->
+<head>
+    <title>Weather App</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#f5f5f5">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+    <style>
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+
+      <script src="js/angular.min.js"></script>
+    <script src="js/ng-cordova.js"></script>
+   <script src="cordova.js"></script>
+     <script src="js/jquery-3.1.1.js"></script>
+      <script src="js/date.js"></script>
+    <script src="js/controller.js"></script> 
+    <script src="js/services.js"></script> 
+  
+<link rel="stylesheet" href="css/framework7.material.min.css">
+<link rel="stylesheet" href="css/framework7.material.css">
+<!-- Path to Framework7 color related styles, Material Theme -->
+<link rel="stylesheet" href="css/framework7.material.colors.min.css">
+<!-- Path to your custom app styles-->
+<link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+
+
+<body class="theme-black" ng-app="weatherApp"> <!--   -->
+   <div class="panel-overlay"></div> 
+<div class="panel panel-left panel-reveal " id="mainpanel">
+    <div class="list-block" ng-controller="aboutCtrl">
+        <div ng-style="blueweather"><span style="margin-left:15px;">Menu</span></div>
+      <ul>
+              <li class="item-content whiteback">
+          <div class="item-media"  ng-click="About();"><img src="img/infoweather.png" width="25px" height="25px"></div>
+          <div class="item-inner" ng-click="About();">
+            <div class="item-title" ><b>About</b></div>
+          
+          </div>
+        </li>
+           
+        </ul>
+    </div>
+ 
+<span ng-style="brandLogo">
+<img src="img/Slight%20Drizzle.png" width="180px" height="200px">
+    </span>
+</div>
+
+<div class="views">
+<div class="view view-main" id="mainpage" >
+<div class="pages navbar-fixed toolbar-fixed">
+<div data-page="index" class="page">
+<div class="navbar" style="bottom:0px;">
+<div class="centretext sliding" style="margin:2.8%;text-shadow: 0.5px 0.5px #f5f5f5;"><img src="img/weath36x36.png" width="25px" height="25px">Weather Forecast</div>
+<div class="navbar-inner">
+<div class="left">
+ <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+</div>
+ </div>
+</div>
+  
+    <div class="page-content " ng-controller="geoLocationCtrl" ng-style="appBack">
+    
+        <div id="results" class="centretext"></div>
+        <div id="myLocation" ng-style="locationStyle" ></div>
+   
+      
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="view about-view " style="display:none;" id="aboutview" >
+     
+      <div class="pages">
+        <div class="page" data-page="aboutPage">
+            <div class="navbar">
+                 <div class="centretext sliding" style="margin:2.8%;text-shadow: 0.5px 0.5px #f5f5f5;"><img src="img/infoweather.png" width="16px" height="16px"> About</div>
+              <div class="navbar-inner">
+                
+                  <div class="left">
+ <a onclick="Navigate('mainpage','aboutview');"> <i class="icon icon-back"></i></a>
+</div>
+              </div>
+            </div>
+            <div class="page-content marginone" style="background:#f5f5f5;"><br><br><br>
+<span>
+<div class="card">
+  <div class="card-header bluetext"></div>
+  <div class="card-content">
+      <div class="card-content-inner">
+      Discover weather based on your location.
+      </div>
+    </div>
+    </div>
+                </span>
+            </div> 
+          </div>
+        </div>
+    </div>
+    
+ 
+
+    <script src="js/app.js"></script>
+  
+    <script src="js/framework7.min.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script>
+var myApp = new Framework7({
+});
+var mainView = myApp.addView('.view-main');
+ 
+var $$ = Dom7;
+
+</script>
+</body>
+
+</html>
